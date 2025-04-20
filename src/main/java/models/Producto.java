@@ -23,4 +23,14 @@ public class Producto {
     public int getPrecio() {
         return precio;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Producto{");
+        sb.append("fabricante='").append(fabricante).append('\'');
+        sb.append(", nombre='").append(nombre).append('\'');
+        sb.append(", precio=").append(precio);
+        sb.append('}');
+        return sb.toString();
+    }
 }

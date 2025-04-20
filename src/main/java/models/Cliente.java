@@ -18,5 +18,8 @@ public class Cliente {
         return apellido;
     }
 
-
+    @Override
+    public String toString() {
+        return nombre + " " + apellido;
+    }
 }
