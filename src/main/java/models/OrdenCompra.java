@@ -9,10 +9,12 @@ public class OrdenCompra {
     private Date fecha;
     private Cliente cliente;
     private Producto[] productos;
+    private int indice;
     private static int contadorId = 0;
 
     public OrdenCompra(String descripcion) {
         this.id = ++contadorId;
+        this.productos = new Producto[4];
         this.descripcion = descripcion;
     }
 
@@ -38,5 +40,11 @@ public class OrdenCompra {
 
     public void setFecha(Date fecha) {
         this.fecha = fecha;
+    }
+
+    public void addProducto(Producto producto) {
+        if (indice < this.productos.length) {
+            this.productos[indice++] = producto;
+        }
     }
 }
