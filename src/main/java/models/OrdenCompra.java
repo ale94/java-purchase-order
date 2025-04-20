@@ -5,10 +5,10 @@ import java.util.Date;
 public class OrdenCompra {
 
     private int id;
-    private String descripcion;
+    private final String descripcion;
     private Date fecha;
     private Cliente cliente;
-    private Producto[] productos;
+    private final Producto[] productos;
     private int indice;
     private static int contadorId = 0;
 
@@ -46,5 +46,13 @@ public class OrdenCompra {
         if (indice < this.productos.length) {
             this.productos[indice++] = producto;
         }
+    }
+
+    public int getGranTotal() {
+        int total = 0;
+        for (int i = 0; i < this.productos.length; i++) {
+            total += this.productos[i].getPrecio();
+        }
+        return total;
     }
 }
